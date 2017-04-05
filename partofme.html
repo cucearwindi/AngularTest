@@ -1,0 +1,67 @@
+<h2>Part of you</h2>
+
+LATIHAN PERULANGAN
+<!-- LATIHAN PERULANGAN -->
+<div ng-controller="perulangan">
+	<ul>
+		<li ng-repeat="each in list">
+			{{each}}
+		</li>
+	</ul>
+</div>
+
+
+
+
+LATIHAN PERULANGAN 2
+<!-- LATIHAN PERULANGAN2 -->
+<div ng-controller="perulangan2">
+  <!-- Inputan -->
+  <ul>
+    <li ng-repeat="data in list2 track by $index">
+      <span>{{ $index }}</span>
+      <input type="text" ng-model="data.nama"
+      placeholder="Nama"/>
+      <input type="text" ng-model="data.umur"
+      placeholder="Umur"/>
+    </li>
+  </ul>
+  <!-- Output -->
+  <ul>
+    <li ng-repeat="data in list2 track by $index">
+      <span>{{ $index }}</span>
+      Nama: {{data.nama}}
+      Umur: {{data.umur}}
+    </li>
+  </ul>
+  <button type="button" ng-click="submit()">
+    CLICK ME</button>
+</div>
+
+
+
+
+LATIHAN HTTP
+<!-- LATIHAN HTTP -->
+<div ng-controller="cobahttp">
+  <!-- Inputan -->
+  <ul>
+    <li ng-repeat="data in list3 track by $index">
+      <span>{{ $index }}</span>
+      <input type="text" ng-model="data.nama"
+      placeholder="Nama"/>
+      <input type="text" ng-model="data.umur"
+      placeholder="Umur"/>
+    </li>
+  </ul>
+  <!-- Output -->
+  <ul>
+    <li ng-repeat="data in list3 track by $index">
+      <span>{{ $index }}</span>
+      Nama: {{data.nama}}
+      Umur: {{data.umur}}
+    </li>
+  </ul>
+  <button type="button" ng-click="submit()">
+    CLICK ME2</button>
+</div>

@@ -1,0 +1,18 @@
+INPUTAN 
+<div ng-controller="inputan">
+	<input type="text" ng-value="inputStatis"/>
+	<h1>{{inputStatis}}</h1>
+</div>
+
+INPUTAN 2
+<div ng-controller="inputan2">
+	<input type="text" ng-value="inputStatis"/>
+	<h1>{{inputStatis}}</h1>
+	<select ng-model="inputSelect"> 
+		<option 
+			ng-repeat="key in dataSelectionKeys" 
+			ng-value="key">{{dataSelection[key]}}
+		</option>
+	</select>
+</div>
+
