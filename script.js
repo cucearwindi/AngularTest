@@ -1,8 +1,8 @@
-var sismiop = angular.module('sismiop',[]);
+var sismiop = angular.module('sismiop',['ngCookies']);
 
 sismiop.controller('menucon', ['$scope', function($scope) {
-  $scope.kasus = 'ingat';
-  $scope.namaUser='';
+    $scope.kasus = 'ingat';
+    $scope.namaUser = '' ;
 }]);
 sismiop.controller('submenucon', ['$scope', function($scope) {
   $scope.kasus = 'lupa';
@@ -14,10 +14,6 @@ sismiop.controller('submenucon', ['$scope', function($scope) {
 sismiop.controller('perulangan', ['$scope', function($scope) {
   $scope.list=[1,2,3,4,5,6,7,8,9];
 }]);
-
-
-
-
 sismiop.controller('perulangan2', ['$scope', function($scope) {
   $scope.list2=[
   {nama:'',	umur:''},
@@ -28,10 +24,6 @@ sismiop.controller('perulangan2', ['$scope', function($scope) {
   	console.log($scope.list2);
   }
 }]);
-
-
-
-
 sismiop.controller('cobahttp', ['$scope', '$http',function($scope, $http) {
   $scope.list3=[
   {nama:'',	umur:''},
@@ -58,21 +50,73 @@ sismiop.controller('cobahttp', ['$scope', '$http',function($scope, $http) {
 
 
 sismiop.controller('inputan', ['$scope', function($scope) {
-  	$scope.inputStatis = 'FX';
+    $scope.inputStatis = 'CUCE';
+    $scope.inputSelect = '0';
+    $scope.dataSelection = {
+        '0': '-- Pilih Makanan Favorit -- ',
+        '1': 'French Fries',
+        '2': 'Steak',
+        '3': 'Toast',
+        '4': 'Froyo',
+        '5': 'Pina Colada',
+    };
+    $scope.dataSelectionKeys = Object.keys($scope.dataSelection);
+    $scope.inputCheckbox = false;
+
+    $scope.inputNumber = 0;
+    $scope.tanggalnya = new Date();
+    $scope.waktunya = new Date();
+
+    $scope.inputPaste = false;
+    $scope.inputCut = false;
+    $scope.inputCopy = false;
 }]);
 
 
 
-sismiop.controller('inputan2', ['$scope', function($scope) {
-  	$scope.inputStatis = 'FX';
-  	$scope.inputSelect = '0';
-  	$scope.dataSelection = {
-  		'0': '-- Pilih Makanan Favorit --',
-  		'1': 'French Fries',
-  		'2': 'Steak',
-  		'3': 'Toast',
-  		'4': 'Froyo',
-  		'5': 'Pina Colada'
-  	};
-  	$scope.dataSelectionKeys = Object.keys($scope.dataSelection)
+
+sismiop.controller('menumemory', ['$scope', function($scope) {
+    $scope.kasus = 'ingat';
+    $scope.namaUser = {
+      pertama:'Cuce',
+      kedua:'Arwindi',
+    };
+    $scope.namaKaryawan = angular.copy($scope.namaUser);
+}]);
+sismiop.controller('menufilterjs', ['$scope', '$filter', function($scope, $filter) {
+    $scope.kasus = 'ingat';
+    $scope.namaUser = {
+      pertama: $filter('uppercase')('iLyArYaN'),
+    };
+}]);
+sismiop.controller('menufiltermodul', ['$scope', '$filter', function($scope, $filter) {
+    $scope.kasus = 'ingat';
+    $scope.namaUser = {
+      pertama: ('iLyArYaN'),
+    };
+}]);
+sismiop.controller('latcurrency', ['$scope', '$filter', function($scope, $filter) {
+    $scope.kasus = 'ingat';
+    $scope.namaUser = {
+      pertama: ('iLyArYaN'),
+    };
+    $scope.uang = 0;
+}]);
+
+
+
+
+sismiop.controller('latCookie', ['$scope', '$cookieStore', function($scope, $cookieStore) {
+    $scope.kasus = 'ingat';
+    $scope.namaUser = {
+      pertama: ('iLyArYaN'),
+    };
+    $scope.uang = 0;
+    console.log($cookieStore.get('val'));
+    $scope.saveCookie = function(){
+      $cookieStore.put('val','TERISI');
+    }
+    $scope.removeCookie = function(){
+      $cookieStore.remove('val');
+    }
 }]);

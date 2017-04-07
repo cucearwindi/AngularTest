@@ -3,11 +3,12 @@
   <head>
     <title>Angular Test</title>
     <script src="angular.min.js"></script>
+    <script src="angular-cookies.js"></script>
     <script src="jquery.js"></script>
     <script src="script.js"></script>
   </head>
   <body>
-    <div ng-controller="menucon">
+    <!--<div ng-controller="menucon>
       <label>Nama:</label>
       <input type="text" ng-model="namaUser" placeholder="Masukkan nama disini">
       <hr>
@@ -17,13 +18,48 @@
           <span>{{namaUser}}</span>
         </div>
       </div>
-    </div>
-    <div>
+    </div>-->
+    
+    <!--<div>
       <ng-include src="'partofme.html'"></ng-include>
     </div>
     <br><br>
     <div>
       <ng-include src="'inputan.html'"></ng-include>
+    </div>-->
+    
+    <!--<div ng-controller="menumemory">
+        <input type="text" ng-model="namaUser.pertama"/>
+      {{ namaUser.pertama }}
+      <br>
+      <input type="text" ng-model="namaKaryawan.pertama"/>
+      {{ namaKaryawan.pertama }}
+    </div>-->
+
+    <!--<div ng-controller="menufilterjs">
+        <input type="text" ng-model="namaUser.pertama"/>
+        {{ namaUser.pertama }}
+    </div>-->
+    <!--<div ng-controller="menufiltermodul">
+        <input type="text" ng-model="namaUser.pertama"/>
+        {{ namaUser.pertama | uppercase}}
+    </div>-->
+
+    <!--<div ng-controller="latcurrency">
+        <input type="number" ng-model="uang"/>
+        {{ uang | currency:"IDR ":2}}
+    </div>-->
+
+    <div ng-controller="latCookie">
+        <input type="number" ng-model="uang"/>
+        {{ uang | currency:"IDR ":2}}
+        <br><br>
+        <button type="button" ng-click="saveCookie()">
+          SAVE COOKIE
+        </button>
+        <button type="button" ng-click="removeCookie()">
+          REMOVE COOKIE
+        </button>
     </div>
   </body>
 </html>

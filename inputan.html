@@ -1,18 +1,44 @@
-INPUTAN 
 <div ng-controller="inputan">
-	<input type="text" ng-value="inputStatis"/>
-	<h1>{{inputStatis}}</h1>
-</div>
+    INPUT STATIS<br>
+    <input type="text" ng-value="inputStatis"/>
+    <h1>{{inputStatis}}</h1>
 
-INPUTAN 2
-<div ng-controller="inputan2">
-	<input type="text" ng-value="inputStatis"/>
-	<h1>{{inputStatis}}</h1>
-	<select ng-model="inputSelect"> 
-		<option 
-			ng-repeat="key in dataSelectionKeys" 
-			ng-value="key">{{dataSelection[key]}}
-		</option>
-	</select>
-</div>
 
+    SELECT<br>
+    <select ng-model="inputSelect">
+    	<option ng-repeat="key in dataSelectionKeys" ng-value="key">{{dataSelection[key]}}</option>
+    </select>
+    
+
+    <br><br>CHECKBOX<br>
+    <label>
+      <input type="checkbox" ng-model="inputCheckbox"/>
+      Switch
+    </label>
+    <div ng-if="inputCheckbox">
+        <h2>Checked</h2>
+    </div>
+
+
+    <br><br>INPUTAN PERKALIAN NUMBER<br>
+    <input type="number" min = "0" max = "1000" ng-model="inputNumber"/>
+    {{ (inputNumber * inputNumber) | number:1}}
+    
+
+    <br><br>DATE-TIME<BR>
+    <input type="date" ng-model="tanggalnya" />
+    {{tanggalnya | date: 'MM/dd/yyyy'}}
+    <br>
+    <input type="time" ng-model="waktunya" />
+    {{waktunya | date: 'HH:mm:ss'}}
+
+
+    <br><br>PASTE-CUT-COPY<BR>
+    <input type="text" ng-paste="inputPaste=true" />
+    Paste Ora? {{inputPaste}}
+    <br>
+    <input type="text" ng-cut="inputCut=true" />
+    Cut Ora? {{inputCut}}
+    <br>
+    <input type="text" ng-copy="inputCopy=true" />
+    Copy Ora? {{inputCopy}}
