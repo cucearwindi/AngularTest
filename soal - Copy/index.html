@@ -3,6 +3,7 @@
   <head>
     <title>Angular Test</title>
     <script src="angular.min.js"></script>
+    <script src="angular-cookies.js"></script>
     <script src="jquery.js"></script>
     <script src="soal_1_script.js"></script>
   </head>
@@ -12,14 +13,14 @@
       Nama:<input type="text" ng-model="namaUser" placeholder="Masukkan nama disini">
       <h3>Halo {{namaUser}}</h3>
     </div>
-    <hr size="10" color="black"><hr size="10" color="black">
+    <hr><hr>
 
     <h1>SOAL 2<h1>
     <div ng-controller="soal2">
       <input type="number" ng-model="uang"/><br>
       <h3>{{ uang | currency:"IDR ":2}}<h3>
     </div>
-    <hr size="10" color="black"><hr size="10" color="black">
+    <hr><hr>
 
     <h1>SOAL 3<h1>
     <div ng-controller="soal3">
@@ -29,7 +30,7 @@
         </li>
       </ul>
     </div>
-    <hr size="10" color="black"><hr size="10" color="black">
+    <hr><hr>
 
     <h1>SOAL 4<h1>
     <div ng-controller="soal4">
@@ -37,11 +38,11 @@
       <select ng-model="user">
         <option ng-repeat="key in dataSelectionKeys" ng-value="key">{{dataSelection[key]}}</option>
       </select>
+      <h3>User {{dataSelection}}</h3>
     </div>
-    <hr size="10" color="black"><hr size="10" color="black">
 
-    <!--<h1>SOAL 4<h1>
-    <div ng-controller="soal4">
+
+    <!--<div ng-controller="aaa">
     <form name="myForm">
       Pilih Nama User :<br>
       <select name="singleSelect" id="singleSelect" ng-model="data.singleSelect">
@@ -56,22 +57,7 @@
       </select><br>
       <tt>Nama User = {{data.singleSelect}}</tt>
     </form>
-    </div>
-    <hr size="10" color="black"><hr size="10" color="black">-->
-
-    <h1>SOAL 5<h1>
-    <div ng-controller="soal5">
-      <ul>
-        <li ng-repeat="row in list track by $index">
-          <input type="text" ng-model="row.nama"/>
-        </li>
-      </ul>
-      <ul>
-        <li ng-repeat="row in list track by $index">
-          <h1>{{row.nama}}</h1>
-        </li>
-      </ul>
-    </div>
+    </div>-->
 
   </body>
 </html>

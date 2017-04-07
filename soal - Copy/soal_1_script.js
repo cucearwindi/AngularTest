@@ -38,21 +38,9 @@ soal.controller('soal4', ['$scope', function($scope) {
     $scope.dataSelectionKeys = Object.keys($scope.dataSelection);
 }]);
 
-//soal.controller('soal4', ['$scope', function($scope) {
-//   $scope.data = {
-//    singleSelect: null,
-//    option1: 'Budi'
-//   };
-//}]);
-
-soal.controller('soal5', ['$scope', function($scope){
-  $scope.struktur_list = {
-    nama:'NoName',
-  };
-  $scope.list = [
-    $scope.struktur_list,
-    $scope.struktur_list,
-    $scope.struktur_list,
-    $scope.struktur_list,
-  ];
+soal.controller('aaa', ['$scope', function($scope) {
+   $scope.data = {
+    singleSelect: null,
+    option1: 'Budi'
+   };
 }]);
